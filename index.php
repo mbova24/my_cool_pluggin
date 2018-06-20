@@ -36,7 +36,7 @@ function cool_stuff() {
 
 
 $user_ip = getUserIP();
-
-echo $user_ip; // Output IP address [Ex: 177.87.193.134];
+$location = file_get_contents('https://ipapi.co/'.$user_ip.'/json/');
+echo $location; // Output IP address [Ex: 177.87.193.134];
 }
 add_shortcode('found','cool_stuff');
