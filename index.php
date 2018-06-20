@@ -1,4 +1,4 @@
-<<?php
+<?php
 /*
 Plugin Name: coolpluggin
 Plugin URI: http://hotmail.com
