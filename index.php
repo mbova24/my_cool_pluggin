@@ -12,7 +12,6 @@ License: GPL2
 //BS Code
 
 function cool_stuff() {
-	function getLocation() {
        echo '<div id="map"></div>
        <script>
          // Note: This example requires that you consent to location sharing when
@@ -57,8 +56,7 @@ function cool_stuff() {
          }
        </script>
        <script async defer
-       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn3RQRMcfuCg9q6yyIZBp-AHsDE3GjAQc
-       &callback=initMap">
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn3RQRMcfuCg9q6yyIZBp-AHsDE3GjAQc&callback=initMap">
        </script>';
 }
 add_shortcode('found','cool_stuff');
