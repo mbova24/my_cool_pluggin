@@ -56,7 +56,9 @@ function cool_stuff() {
          }
        </script>
        <script async defer
-       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn3RQRMcfuCg9q6yyIZBp-AHsDE3GjAQc&callback=initMap">
-       </script>';
+       src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+       </script><style>#map {
+        height: 500px;
+     }</style>';
 }
 add_shortcode('found','cool_stuff');
