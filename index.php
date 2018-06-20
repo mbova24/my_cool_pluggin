@@ -1,4 +1,4 @@
-<?php
+<<?php
 /*
 Plugin Name: coolpluggin
 Plugin URI: http://hotmail.com
@@ -12,31 +12,19 @@ License: GPL2
 //BS Code
 
 function cool_stuff() {
-	function getUserIP()
-{
-    $client  = @$_SERVER['HTTP_CLIENT_IP'];
-    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
-    $remote  = $_SERVER['REMOTE_ADDR'];
-
-    if(filter_var($client, FILTER_VALIDATE_IP))
-    {
-        $ip = $client;
+	function getLocation() {
+       echo '<script> if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+            x = "Geolocation is not supported by this browser.";
+        console.log(x);
+        }
+    
+    function showPosition(position) {
+        x = "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude;
+    console.log(x);
     }
-    elseif(filter_var($forward, FILTER_VALIDATE_IP))
-    {
-        $ip = $forward;
-    }
-    else
-    {
-        $ip = $remote;
-    }
-
-    return $ip;
-}
-
-
-$user_ip = getUserIP();
-$location = file_get_contents('https://ipapi.co/'.$user_ip.'/json/');
-echo $location; // Output IP address [Ex: 177.87.193.134];
+</script>'
 }
 add_shortcode('found','cool_stuff');
